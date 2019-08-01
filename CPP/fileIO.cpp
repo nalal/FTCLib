@@ -10,13 +10,25 @@ uint8_t mFilesMoved = 0;
 uint8_t cFiles = 0;
 uint8_t cFilesMoved = 0;
 
-// Initializes directories for program
+// Initializes directories for program from string vector
 void initFiles(vector<string> DIRs)
 {
-	// Need to actually add this, needs to be rewritten from original form
+	for(vector<string>::iterator it = DIRs.begin(); it != DIRs.end(); ++it)
+	{
+		string dir = *it;
+		if(fs::exists(dir))
+		{
+			cout << "=Directory '" << dir << "' found.\n";
+		}
+		else
+		{
+			cout << "=Directory '" << dir << "' does not exist, creating.\n";
+			fs::create_directories(dir);
+		}
+	}
 }
 
-// Removes mod from folder if exists
+// Removes file from folder if exists
 void deleteFile(string file)
 {
 	if(fs::exists(file))
@@ -26,7 +38,7 @@ void deleteFile(string file)
 	}
 }
 
-// Mod install function for threading
+// Copy function
 void copyFile(string path, string targ)
 {
 	if fs::exists(path)
@@ -38,12 +50,12 @@ void copyFile(string path, string targ)
 	}
 	else
 	{
-		cout << "File " << path << " does not exist.\n"
+		cout << "=File " << path << " does not exist.\n"
 		mFilesMoved++;
 	}
 }
 
-// Check for mods and configs folder
+// Check for folder
 int testDIR(string DIR)
 {
 	if(!fs::exists(DIR))
@@ -54,7 +66,7 @@ int testDIR(string DIR)
 }
 
 
-// Check if list file exists in old list folder
+// Check if file exists
 bool fileExists(string path)
 {
 	if(fs::exists(path))

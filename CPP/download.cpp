@@ -35,7 +35,6 @@ string getLink(string line)
 size_t header_callback(char *buffer, size_t size, size_t nitems, void *userdata)
 {
     size_t numbytes = size * nitems;
-    //printf("%.*s\n", numbytes, buffer);
     return numbytes;
 }
 
@@ -43,12 +42,12 @@ size_t header_callback(char *buffer, size_t size, size_t nitems, void *userdata)
 int curlExecute
 (
 	FILE *fp, 
-	CURL *curl, 
 	string link, 
 	char outfilename[FILENAME_MAX],
 	bool verbose = false
 )
 {
+	CURL *curl;
 	char *ct = NULL;
 	if (curl)
 	{

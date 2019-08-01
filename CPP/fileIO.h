@@ -10,8 +10,6 @@
 #include <string>
 #include <iostream>
 #include <vector>
-#include <thread>
-#include <chrono>
 
 //Local includes
 #include "download.h"

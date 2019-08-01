@@ -21,7 +21,6 @@ std::string getName(std::string link);
 int curlExecute
 (
 	FILE *fp, 
-	CURL *curl, 
 	string link, 
 	char outfilename[FILENAME_MAX],
 	bool verbose
