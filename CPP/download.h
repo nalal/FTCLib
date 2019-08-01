@@ -17,6 +17,12 @@
 namespace fs = std::experimental::filesystem;
 
 //Functions
-void downloadFromList(std::vector<std::string> urls, std::string list);
-int downloadList(std::string url);
 std::string getName(std::string link);
+int curlExecute
+(
+	FILE *fp, 
+	CURL *curl, 
+	string link, 
+	char outfilename[FILENAME_MAX],
+	bool verbose
+);

@@ -19,9 +19,8 @@
 namespace fs = std::experimental::filesystem;
 
 //Functions
-void initFiles();
-int testDIR();
-bool listExists();
-void deleteMod(std::string file);
-void save();
+void initFiles(std::vector<string> DIRs);
+int testDIR(std::string DIR);
+bool fileExists(std::string path);
+void deleteFile(std::string file);
 void getList(std::string listURL);
