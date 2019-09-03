@@ -6,8 +6,9 @@ using std::this_thread;
 
 const int threads = hardware_concurrency();;
 int usedThreads = 0;
+threadInfo threadList[threads];
 
-void stripeThread()
+void stripeThreadRaw(void (*func))
 {
 	for(uint8_t i = 0; i < threads; i++)
 	{

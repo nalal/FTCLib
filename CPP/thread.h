@@ -5,3 +5,12 @@
 #include <stdint.h>
 
 // Local includes
+
+// Objects
+
+struct threadInfo
+{
+	std::thread threadID;
+	char* threadTag;
+	bool threadActive;
+}
