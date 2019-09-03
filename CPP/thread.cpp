@@ -45,6 +45,7 @@ int getThreadsUsed()
 	return usedThreads;
 }
 
+//Print thread status
 void printThreadInfo()
 {
 	threadInfo threadDetail;
