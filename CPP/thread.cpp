@@ -4,8 +4,9 @@
 using std::thread;
 using std::this_thread;
 using std::string;
+using std::cout;
 
-const int threads = hardware_concurrency();;
+const int threads = thread::hardware_concurrency();
 int usedThreads = 0;
 threadInfo threadList[(threads - 1)];
 
@@ -43,3 +44,16 @@ int getThreadsUsed()
 {
 	return usedThreads;
 }
+
+void printThreadInfo()
+{
+	threadInfo threadDetail;
+	for(uint8_t i = 0; i < threads; i++)
+	{
+		threadDetail = threadList[i];
+		cout << "THREAD: " << threadDetail.threadID << "\n" <<
+			"THREAD USED: " << to_string(threadDetail.threadActive) <<
+			"\n";
+	}
+}
+
