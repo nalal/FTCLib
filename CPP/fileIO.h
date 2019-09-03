@@ -18,7 +18,6 @@ namespace fs = std::experimental::filesystem;
 
 //Functions
 void initFiles(std::vector<string> DIRs);
-int testDIR(std::string DIR);
 bool fileExists(std::string path);
 void deleteFile(std::string file);
-void getList(std::string listURL);
+void copyFile(string path, string targ);

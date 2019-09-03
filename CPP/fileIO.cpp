@@ -55,17 +55,6 @@ void copyFile(string path, string targ)
 	}
 }
 
-// Check for folder
-int testDIR(string DIR)
-{
-	if(!fs::exists(DIR))
-	{
-		return 1;
-	}
-	return 0;
-}
-
-
 // Check if file exists
 bool fileExists(string path)
 {
