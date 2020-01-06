@@ -5,19 +5,10 @@
 #include <stdint.h>
 
 //C++ includes
-#include <fstream>
 #include <experimental/filesystem>
-#include <string>
-#include <iostream>
 #include <vector>
 
-//Local includes
-#include "download.h"
+bool check_file(char * target_file);
+void delete_file(char * target_file);
+void copy_file(char * target_file, char * target_location);
 
-namespace fs = std::experimental::filesystem;
-
-//Functions
-void initFiles(std::vector<string> DIRs);
-bool fileExists(std::string path);
-void deleteFile(std::string file);
-void copyFile(string path, string targ);

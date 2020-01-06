@@ -2,68 +2,28 @@
 #include "fileIO.h"
 
 //Namespaces
-using namespace std;
 namespace fs = std::experimental::filesystem;
+using std::vector
 
-uint8_t mFiles = 0;
-uint8_t mFilesMoved = 0;
-uint8_t cFiles = 0;
-uint8_t cFilesMoved = 0;
-
-// Initializes directories for program from string vector
-void initFiles(vector<string> DIRs)
+void copy_file(char * target_file, char * target_location)
 {
-	for(vector<string>::iterator it = DIRs.begin(); it != DIRs.end(); ++it)
-	{
-		string dir = *it;
-		if(fs::exists(dir))
-		{
-			cout << "=Directory '" << dir << "' found.\n";
-		}
-		else
-		{
-			cout << "=Directory '" << dir << "' does not exist, creating.\n";
-			fs::create_directories(dir);
-		}
-	}
+	fs::copy(target_file,target_location);
 }
 
-// Removes file from folder if exists
-void deleteFile(string file)
+void delete_file(char * target_file)
 {
-	if(fs::exists(file))
-	{
-		cout << " =Removing " << file << "\n";
-		remove(file.c_str());
-	}
+	fs::remove_all(target_file);
 }
 
-// Copy function
-void copyFile(string path, string targ)
+bool check_file(char * target_file)
 {
-	if fs::exists(path)
-	{
-		fs::copy(path, targ, 
-			fs::copy_options::overwrite_existing | fs::copy_options::recursive);
-			cout << " =" << path << " moved." << endl;
-		mFilesMoved++;
-	}
-	else
-	{
-		cout << "=File " << path << " does not exist.\n"
-		mFilesMoved++;
-	}
-}
-
-// Check if file exists
-bool fileExists(string path)
-{
-	if(fs::exists(path))
-	{
+	if(fs::exists(target_file))
 		return true;
-	}
 	else
-	{
 		return false;
-	}
+}
+
+std::vector<char *> get_files(char * target_dir, int flag)
+{
+
 }
