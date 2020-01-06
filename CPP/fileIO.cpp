@@ -23,7 +23,10 @@ bool check_file(char * target_file)
 		return false;
 }
 
+
+/* [pending rework]
 std::vector<char *> get_files(char * target_dir, int flag)
 {
 
 }
+*/
