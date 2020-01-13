@@ -1,12 +1,10 @@
 #pragma once
-//C++ includes
-#include <experimental/filesystem>
 
 //C includes
 #include <stdio.h>
 #include <curl/curl.h>
 
-namespace fs = std::experimental::filesystem;
+//Link is -lcurl
 
 //Functions
 
