@@ -20,7 +20,7 @@ size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream)
     written = fwrite(ptr, size, nmemb, stream);
 }
 
-void download(char * target, char * link, int season, bool verbose)
+void download(char * target, char * link, bool verbose)
 {
 	FILE *fp;
 	CURL *curl; 

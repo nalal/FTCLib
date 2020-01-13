@@ -12,7 +12,6 @@ namespace fs = std::experimental::filesystem;
 void download(
 	char * name, 
 	char * link, 
-	int season, 
 	bool verbose = false
 );
 
